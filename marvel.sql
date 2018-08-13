@@ -47,4 +47,8 @@ INSERT INTO movies (title, year, show_time) VALUES ('Captain America: Civil War'
 INSERT INTO movies (title, year, show_time) VALUES ('Doctor Strange', 2016, '22:00');
 INSERT INTO movies (title, year, show_time) VALUES ('Guardians of the Galaxy 2', 2017, '15:30');
 
-SELECT * FROM movies;
+
+
+SELECT * FROM movies WHERE title = 'Guardians of the Galaxy';
+UPDATE movies SET show_time = '20:55' WHERE title = 'Guardians of the Galaxy 2';
+SELECT * FROM movies
