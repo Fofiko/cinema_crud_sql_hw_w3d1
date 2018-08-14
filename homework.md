@@ -37,6 +37,19 @@ UPDATE people
   WHERE name = 'Graeme Broose';
 
 ```
+
+```sql
+UPDATE people
+  SET name = 'Batman'
+  WHERE id = (SELECT id FROM people WHERE name = 'Graham Bruce');
+
+```
+
+
+
+
+
+
 4. Insert your name into the 'people' table.
 ```sql
 INSERT INTO people (name) VALUES ('Fofo Ntaloumi');
@@ -57,9 +70,19 @@ INSERT INTO people (name) VALUES ('Keith Douglas');
 ```sql
 DELETE FROM people WHERE name = 'Craig Morton';
 ```
+
+
+```SQL
+DELETE FROM people
+WHERE id IN (2, 3, 5)
+```
+
 9.  The cinema has just heard that they will be holding an exclusive midnight showing of 'Avengers: Infinity War'!! Create a new entry in the 'movies' table to reflect this.
 ```sql
 INSERT INTO movies (title, year, show_time) VALUES ('Avengers: Infinity War', 2018, '00:00');
+
+
+
 ```
 10.  The cinema would also like to make the Guardians movies a back to back feature. Find out the show time of "Guardians of the Galaxy" and set the show time of "Guardians of the Galaxy 2" to start two hours later.
 ```sql
@@ -71,6 +94,3 @@ UPDATE movies SET show_time = '20:55' WHERE title = 'Guardians of the Galaxy 2';
 ## Extension
 
 1.  Research how to delete multiple entries from your table in a single command.
-```sql
-DELETE * FROM [table name] WHERE [condition]
-``
